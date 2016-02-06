@@ -25,7 +25,7 @@ public:
     void setPrinter(Print &printer);
     void setLevel(Level level);
 
-    DebugMessage& level(Level level);
+    DebugMessage& l(Level level);
     DebugMessage& print(const char* msg);
     DebugMessage& println(const char* msg);
     DebugMessage& printf(const char* msg, ...);

@@ -7,7 +7,7 @@ void DebugMessage::setLevel(DebugMessage::Level level) {
   _level = level;
 }
 
-DebugMessage& DebugMessage::level(DebugMessage::Level level) {
+DebugMessage& DebugMessage::l(DebugMessage::Level level) {
   _level_current = level;
   return *this;
 }
