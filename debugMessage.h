@@ -19,19 +19,19 @@ public:
   /*! * default Constructor */
     DebugMessage()
       : _level(Level::OFF),
-        _level_current(Level::INFO),
+        _level_current(Level::OFF),
         _printer(nullptr) {}
 
     void setPrinter(Print &printer);
     void setLevel(Level level);
 
     DebugMessage& l(Level level);
-    DebugMessage& print(const char* msg);
-    DebugMessage& println(const char* msg);
+    DebugMessage& print_double(double n);
     DebugMessage& printf(const char* msg, ...);
 
 private:
     void va_print(const char *format, va_list args);
+    inline bool should_be_printed(void);
 };
 
 extern DebugMessage dMessage;

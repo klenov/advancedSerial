@@ -12,22 +12,15 @@ DebugMessage& DebugMessage::l(DebugMessage::Level level) {
   return *this;
 }
 
-DebugMessage& DebugMessage::print(const char* msg) {
-  if (_level_current <= _level) {
-    _printer->print(msg);
-  }
-  return *this;
-}
-
-DebugMessage& DebugMessage::println(const char* msg) {
-  if (_level_current <= _level) {
-    _printer->println(msg);
+DebugMessage& DebugMessage::print_double(double n) {
+  if ( should_be_printed() ) {
+    _printer->print(n);
   }
   return *this;
 }
 
 DebugMessage& DebugMessage::printf(const char* msg, ...) {
-  if (_level_current <= _level) {
+  if ( should_be_printed() ) {
     va_list args;
     va_start(args, msg);
     va_print(msg, args);
@@ -99,6 +92,10 @@ void DebugMessage::va_print(const char *format, va_list args) {
     }
     _printer->print(*format);
   }
+}
+
+inline bool DebugMessage::should_be_printed() {
+   return _level_current <= _level;
 }
 
 DebugMessage dMessage = DebugMessage();
