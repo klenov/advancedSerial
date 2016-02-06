@@ -10,7 +10,7 @@
 
 class DebugMessage {
 public:
-    enum Level { NOOUTPUT, ERROR, INFO, DEBUG, VERBOSE };
+    enum Level { OFF, ERROR, INFO, DEBUG, VERBOSE };
 private:
     Level   _level;
     Level   _level_current;
@@ -18,8 +18,8 @@ private:
 public:
   /*! * default Constructor */
     DebugMessage()
-      : _level(Level::NOOUTPUT),
-        _level_current(Level::NOOUTPUT),
+      : _level(Level::OFF),
+        _level_current(Level::INFO),
         _printer(nullptr) {}
 
     void setPrinter(Print &printer);
@@ -34,6 +34,6 @@ private:
     void va_print(const char *format, va_list args);
 };
 
-extern DebugMessage debugMessage;
+extern DebugMessage dMessage;
 typedef DebugMessage::Level Level;
 #endif

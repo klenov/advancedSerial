@@ -101,4 +101,4 @@ void DebugMessage::va_print(const char *format, va_list args) {
   }
 }
 
-DebugMessage debugMessage = DebugMessage();
+DebugMessage dMessage = DebugMessage();
