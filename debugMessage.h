@@ -35,5 +35,5 @@ private:
 };
 
 extern DebugMessage debugMessage;
-typedef DebugMessage DM;
+typedef DebugMessage::Level Level;
 #endif
