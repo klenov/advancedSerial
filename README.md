@@ -56,9 +56,9 @@ You should have Arduino IDE 1.5.8 or newer to use this library or you can [manua
 At this time this library doesn't work on Arduino Due.
 
 ## Similar libraries
-http://playground.arduino.cc/Code/SerialDebugger
-https://github.com/felixstorm/AvrArdLogging
-https://github.com/dhylands/Arduino-logging-library
+* http://playground.arduino.cc/Code/SerialDebugger
+* https://github.com/felixstorm/AvrArdLogging
+* https://github.com/dhylands/Arduino-logging-library
 
 
 
