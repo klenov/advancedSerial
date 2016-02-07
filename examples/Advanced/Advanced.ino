@@ -1,5 +1,5 @@
 /*
-   advancedSerial Library - Basic Example
+   advancedSerial Library - Advanced Example
    https://github.com/klenov/advancedSerial
 */
 
