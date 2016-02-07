@@ -42,8 +42,8 @@ public:
     DebugMessage& print(Type tX) {
       if ( should_be_printed() ) {
         _printer->print(tX);
-        return *this;
       }
+      return *this;
     }
 
     template <typename Type>
@@ -56,8 +56,8 @@ public:
       if( should_be_printed() ) {
         print(tX);
         _printer->println();
-        return *this;
       }
+      return *this;
     }
 
     template <typename Type>
@@ -68,8 +68,8 @@ public:
     DebugMessage& print(long n, int base) {
       if ( should_be_printed() ) {
         _printer->print(n, base);
-        return *this;
       }
+      return *this;
     }
     inline DebugMessage& p(long n, int base) {return print(n, base);}
 
@@ -77,8 +77,8 @@ public:
       if ( should_be_printed() ) {
         print(n, base);
         _printer->println();
-        return *this;
       }
+      return *this;
     }
     inline DebugMessage& pln(long n, int base) {return println(n, base);}
 };
