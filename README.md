@@ -1,5 +1,4 @@
 # advancedSerial
-Arduino Serial.print() with chainable methods and verbosity levels. Suitable for debug messages.
 
 This library provides some additions to regular `Serial.print()`:
 
@@ -18,7 +17,7 @@ aSerial.print("x = ").print(x).print("y = ").println(y);
 // also short method names are available
 aSerial.p("x = ").p(x).p("y = ").pln(y);
 ```
-You cand find complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Basic/Basic.ino).
+You cand find a complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Basic/Basic.ino).
 
 **2. Verbosity levels:**
 There are four verbosity levels. The order in terms of verbosity, from least to most is `A, AA, AAA, AAAA`. You can choose at wich verbosity level a message will be printed and also set filtering threshold. Only the masseges less or equally verbose to the treshold level will be printed. 
@@ -32,17 +31,17 @@ void setup() {
 }
 
 void loop() {
-  aSerial.level(Level::A).print("This message will be printed");       // Level::A is less verbose than the filtering threshold
-  aSerial.level(Level::AA).print("This message also will be printed"); // Level::AA is equal to the filtering threshold
+  aSerial.level(Level::A).println("This message will be printed");       // Level::A is less verbose than the filtering threshold
+  aSerial.level(Level::AA).println("This message also will be printed"); // Level::AA is equal to the filtering threshold
   
-  aSerial.level(Level::AAA).print("This message won't be printed");    // Level::AAA is more verbose than the filtering threshold
-  aSerial.level(Level::AAAA).print("This message won't be printed");   // Level::AAAA is more verbose than the filtering threshold
+  aSerial.level(Level::AAA).println("This message won't be printed");    // Level::AAA is more verbose than the filtering threshold
+  aSerial.level(Level::AAAA).println("This message won't be printed");   // Level::AAAA is more verbose than the filtering threshold
   
   // also short method names are available
-  aSerial.l(Level::AAAA).pln("This message won't be printed");
+  aSerial.l(Level::AAAA).p("Oops! ").pln("This message won't be printed");
   }
 ```
-You cand find complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Advanced/Advanced.ino).
+You cand find a complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Advanced/Advanced.ino).
 
 ## Tested with
 * Arduino Uno
