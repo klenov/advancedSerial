@@ -1,5 +1,4 @@
 # advancedSerial
-Arduino Serial.print() with chainable methods and verbosity levels. Suitable for debug messages.
 
 This library provides some additions to regular `Serial.print()`:
 
