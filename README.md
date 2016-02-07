@@ -43,13 +43,17 @@ void loop() {
 ```
 You cand find a complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Advanced/Advanced.ino).
 
+You should have Arduino IDE 1.5.8 or newer to use this library or you can [manually enable C++11 in the configuration files](https://arduino.land/FAQ/content/2/49/en/can-c11-be-used-with-arduino.html).
+
 ## Tested with
 * Arduino Uno
 * Arduino Nano
+* Arduino Pro Micro
 * Arduino Mega 2560
-* Arduino Due
 * Teensy 3.1
 * NodeMCU 1.0
+
+At this time this library doesn't work on Arduino Due.
 
 ## Similar libraries
 http://playground.arduino.cc/Code/SerialDebugger
