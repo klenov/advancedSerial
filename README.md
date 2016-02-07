@@ -39,7 +39,7 @@ void loop() {
   
   // also short method names are available
   aSerial.l(Level::AAAA).p("Oops! ").pln("This message won't be printed");
-  }
+}
 ```
 You cand find a complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Advanced/Advanced.ino).
 
