@@ -1,43 +1,35 @@
-/* debugMessage Library - Advanced Example
-   based on https://github.com/mrRobot62/Arduino-logging-library
- */
+/*
+   advancedSerial Library - Basic Example
+   https://github.com/klenov/advancedSerial
+*/
 
-#include <debugMessage.h>
+#include <advancedSerial.h>
 
-int   int_1  =    123,  int_2 =    345;
-long  long_1 = 111111, long_2 = 222222;
-bool  bool_1 =   true, bool_2 =  false;
-
-const char* str_1 = "this is a string";
+int counter = 0;
 
 void setup() {
   Serial.begin(9600);
 
-  dMessage.setPrinter(Serial);
-  dMessage.setLevel(Level::VERBOSE); // set verbosity level, could be OFF, ERROR, INFO, DEBUG, VERBOSE
+  aSerial.setPrinter(Serial);
+  aSerial.setFilter(Level::AA);
+  /* Uncomment the following line to disable the output. By defalut the ouput is on. */
+  // aSerial.off();
 }
 
 void loop() {
-  dMessage.l(Level::INFO).printf(" * debugMessage library advanced example * " CR);
+  /* Printing "hello, world". */
+  aSerial.level(Level::A).println("This message will be printed");       // Level::A is less verbose than the filtering threshold
+  aSerial.level(Level::AA).println("This message also will be printed"); // Level::AA is equal to the filtering threshold
 
+  aSerial.level(Level::AAA).println("This message won't be printed");    // Level::AAA is more verbose than the filtering threshold
+  aSerial.level(Level::AAAA).println("This message won't be printed");   // Level::AAAA is more verbose than the filtering threshold
 
-  /* Printing different types */
-  /* int */
-  dMessage.l(Level::INFO).printf("Integers int_1 = %d, int_2 = %d" CR,        int_1, int_2);
-  dMessage.l(Level::INFO).printf("Hex integers int_1 = %x, int_2 = %X" CR,     int_1, int_2);
-  dMessage.l(Level::INFO).printf("Binary integers int_1 = %b, int_2 = %B" CR, int_1, int_2);
+  /* The same using short method names. */
+  aSerial.l(Level::A).pln("This message will be printed");
+  aSerial.l(Level::AA).pln("This message also will be printed");
 
-  /* long */
-  dMessage.l(Level::INFO).printf("Longs long_1 %l, long_1 = %l" CR, long_1, long_2);
+  aSerial.l(Level::AAA).pln("This message won't be printed");
+  aSerial.l(Level::AAAA).pln("This message won't be printed");
 
-  /* bool */
-  dMessage.l(Level::INFO).printf("Booleans bool_1 = %t, bool_2 = %T" CR, bool_1, bool_2);
-
-  /* string */
-  dMessage.l(Level::INFO).printf("String: %s" CR, str_1);
-  dMessage.l(Level::ERROR).printf("Sample error message." CR);
-
-  dMessage.l(Level::INFO).printf("%d, %d, %l, %l, %t, %T" CR CR, int_1, int_2, long_1, long_2, bool_1, bool_2);
-
-  delay(5000);
+  delay(3000);
 }

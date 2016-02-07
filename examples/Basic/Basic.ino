@@ -1,32 +1,28 @@
-/* debugMessage Library - Basic Example */
+/*
+   advancedSerial Library - Basic Example
+   https://github.com/klenov/advancedSerial
+*/
 
-#include <debugMessage.h>
+#include <advancedSerial.h>
 
 int counter = 0;
 
 void setup() {
   Serial.begin(9600);
 
-  dMessage.setPrinter(Serial);
-  dMessage.setLevel(Level::DEBUG); // set verbosity level, could be OFF, ERROR, INFO, DEBUG, VERBOSE
+  aSerial.setPrinter(Serial);
+  /* Uncomment the following line to disable the output. By defalut the ouput is on. */
+  // aSerial.off();
 }
 
 void loop() {
-  /* This message will be printed at Level::INFO */
-  dMessage.level(Level::INFO).print("counter = ").println(counter);
+  /* Printing "hello, world". */
+  aSerial.print("hello, ");
+  aSerial.println("world");
 
-  /* The same with method aliases */
-  dMessage.l(Level::INFO).p("counter = ").pln(counter);
+  /* The same using short method names. */
+  aSerial.p("hello, ");
+  aSerial.pln("world");
 
-  /* Of course you can still use good old Serial.print() */
-  Serial.print("counter = ");
-  Serial.println(counter);
-
-  dMessage.pln("This message is at Level::INFO, since printing level hasn't been changed since last call to dMessage.level()");
-  dMessage.l(Level::DEBUG).pln("This message is at Level::DEBUG");
-
-  dMessage.l(Level::VERBOSE).p("This message won't be printed until level is not set to Level::VERBOSE");
-
-  counter += 1;
   delay(3000);
 }
