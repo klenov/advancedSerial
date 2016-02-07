@@ -1,0 +1,61 @@
+# advancedSerial
+Arduino Serial.print() with chainable methods and verbosity levels. Suitable for debug messages.
+
+This library provides some additions to regular `Serial.print()`:
+
+**1. Chainable `print()` and `println()` methods:**
+
+```Arduino
+// Instead of
+Serial.print("x = ");
+Serial.print(x);
+Serial.print("y = ");
+Serial.println(y);
+
+// you can
+aSerial.print("x = ").print(x).print("y = ").println(y);
+
+// also short method names are available
+aSerial.p("x = ").p(x).p("y = ").pln(y);
+```
+You cand find complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Basic/Basic.ino).
+
+**2. Verbosity levels:**
+There are four verbosity levels. The order in terms of verbosity, from least to most is `A, AA, AAA, AAAA`. You can choose at wich verbosity level a message will be printed and also set filtering threshold. Only the masseges less or equally verbose to the treshold level will be printed. 
+Maybe is't easier to see by the example:
+```Arduino
+void setup() {
+  Serial.begin(9600);
+
+  aSerial.setPrinter(Serial);
+  aSerial.setFilter(Level::AA); // The filtering threshold is set to Level::AA
+}
+
+void loop() {
+  aSerial.level(Level::A).print("This message will be printed");       // Level::A is less verbose than the filtering threshold
+  aSerial.level(Level::AA).print("This message also will be printed"); // Level::AA is equal to the filtering threshold
+  
+  aSerial.level(Level::AAA).print("This message won't be printed");    // Level::AAA is more verbose than the filtering threshold
+  aSerial.level(Level::AAAA).print("This message won't be printed");   // Level::AAAA is more verbose than the filtering threshold
+  
+  // also short method names are available
+  aSerial.l(Level::AAAA).pln("This message won't be printed");
+  }
+```
+You cand find complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Advanced/Advanced.ino).
+
+## Tested with
+* Arduino Uno
+* Arduino Nano
+* Arduino Mega 2560
+* Arduino Due
+* Teensy 3.1
+* NodeMCU 1.0
+
+## Similar libraries
+http://playground.arduino.cc/Code/SerialDebugger
+https://github.com/felixstorm/AvrArdLogging
+https://github.com/dhylands/Arduino-logging-library
+
+
+
