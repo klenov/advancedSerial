@@ -20,9 +20,12 @@ void loop() {
   aSerial.print("hello, ");
   aSerial.println("world");
 
-  /* The same using short method names. */
-  aSerial.p("hello, ");
-  aSerial.pln("world");
+  // you can chain print() and println() methods
+  aSerial.print("counter = ").println(counter);
 
+  // also short method names are available
+  aSerial.p("counter = ").pln(counter);
+
+  counter++;
   delay(3000);
 }

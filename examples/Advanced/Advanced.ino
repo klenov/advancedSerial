@@ -31,5 +31,7 @@ void loop() {
   aSerial.l(Level::AAA).pln("This message won't be printed");
   aSerial.l(Level::AAAA).pln("This message won't be printed");
 
+  aSerial.l(Level::A).p("Look! ").pln("This message will be printed");
+
   delay(3000);
 }
