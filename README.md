@@ -45,6 +45,18 @@ You cand find a complete example [here](https://github.com/klenov/advancedSerial
 
 You should have Arduino IDE 1.5.8 or newer to use this library or you can [manually enable C++11 in the configuration files](https://arduino.land/FAQ/content/2/49/en/can-c11-be-used-with-arduino.html).
 
+# Pulic Methods
+| Method               | Short alias | Description                                                   |
+|----------------------|-------------|---------------------------------------------------------------|
+| `setPrinter(Print)`  |             | `Print` could be a hardware or software serial                |
+| `setFilter(Level)`   |             | `Level` could be one of `Level::A`, `Level::AA`, ..., `Level::AAAA`|
+| `off()`              |             | Disables the output                                           |
+| `on()`               |             | Enables the output                                            |
+| `level(Level)`       | `l(Level)`  | Sets the message verbosity level                              |
+| `print(x)`            |    `p(x)`    | The same functionality as `Serial.print()`                    |
+| `println(x)`          |    `pln(x)`  | The same functionality as `Serial.println()`                  |
+
+
 ## Tested with
 * Arduino Uno
 * Arduino Nano
