@@ -6,7 +6,6 @@
 #ifndef ADVANCED_SERIAL
 #define ADVANCED_SERIAL
 
-#include <inttypes.h>
 #include <stdarg.h>
 
 #include "Arduino.h"
@@ -15,7 +14,7 @@
 
 class advancedSerial {
 public:
-    enum class Level { A, AA, AAA, AAAA  };
+    enum class Level { A, AA, AAA, AAAA }; // would v, vv, vvv, vvvv looks better?
 private:
     bool _output_enabled;
 
