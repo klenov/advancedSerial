@@ -31,11 +31,15 @@ void setup() {
 }
 
 void loop() {
-  aSerial.level(Level::A).println("This message will be printed");       // Level::A is less verbose than the filtering threshold
-  aSerial.level(Level::AA).println("This message also will be printed"); // Level::AA is equal to the filtering threshold
+  // This message will be printed
+  aSerial.level(Level::A).println("Level::A is less verbose than the filtering threshold");
+  // This message also will be printed
+  aSerial.level(Level::AA).println("Level::AA is equal to the filtering threshold"); 
   
-  aSerial.level(Level::AAA).println("This message won't be printed");    // Level::AAA is more verbose than the filtering threshold
-  aSerial.level(Level::AAAA).println("This message won't be printed");   // Level::AAAA is more verbose than the filtering threshold
+  // This message won't be printed
+  aSerial.level(Level::AAA).println("Level::AAA is more verbose than the filtering threshold");
+  // This message won't be printed
+  aSerial.level(Level::AAAA).println("Level::AAAA is more verbose than the filtering threshold");
   
   // also short method names are available
   aSerial.l(Level::AAAA).p("Oops! ").pln("This message won't be printed");
