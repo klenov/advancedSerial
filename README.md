@@ -11,16 +11,16 @@ Serial.print(x);
 Serial.print("y = ");
 Serial.println(y);
 
-// you can
+// you can chain print() and println() methods
 aSerial.print("x = ").print(x).print("y = ").println(y);
 
 // also short method names are available
 aSerial.p("x = ").p(x).p("y = ").pln(y);
 ```
-You cand find a complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Basic/Basic.ino).
+You cand find a basic example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Basic/Basic.ino).
 
 **2. Verbosity levels:**
-There are four verbosity levels. The order in terms of verbosity, from least to most is `A, AA, AAA, AAAA`. You can choose at wich verbosity level a message will be printed and also set filtering threshold. Only the masseges less or equally verbose to the treshold level will be printed. 
+There are four verbosity levels. The order in terms of verbosity, from least to most is `A, AA, AAA, AAAA`. You can choose at wich verbosity level a message will be printed and also set a filtering threshold. Only the masseges less or equally verbose to the treshold level will be printed. 
 Maybe is't easier to see by the example:
 ```Arduino
 void setup() {
