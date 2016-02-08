@@ -10,8 +10,6 @@
 
 #include "Arduino.h"
 
-#define CR "\n"
-
 class advancedSerial {
 public:
     enum class Level { A, AA, AAA, AAAA }; // would v, vv, vvv, vvvv looks better?
