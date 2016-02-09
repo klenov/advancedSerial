@@ -14,7 +14,7 @@ Serial.println(y);
 // you can chain print() and println() methods
 aSerial.print("x = ").print(x).print("y = ").println(y);
 
-// also short method names are available
+// short method names are also available
 aSerial.p("x = ").p(x).p("y = ").pln(y);
 ```
 You cand find a basic example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Basic/Basic.ino).
