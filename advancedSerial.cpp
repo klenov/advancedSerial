@@ -12,15 +12,15 @@
 
 class advancedSerial {
 public:
-    enum class Level { A, AA, AAA, AAAA }; // would v, vv, vvv, vvvv looks better?
+    enum class Level { v, vv, vvv, vvvv }; // would v, vv, vvv, vvvv looks better?
 private:
     bool _output_enabled;
 
     Level _filter_level;
-    const Level default_filter_level = Level::A;
+    const Level default_filter_level = Level::v;
 
     Level _message_level;
-    const Level default_message_level = Level::A;
+    const Level default_message_level = Level::v;
 
     Print*  _printer;
 
