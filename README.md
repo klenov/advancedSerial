@@ -20,7 +20,7 @@ aSerial.p("x = ").p(x).p("y = ").pln(y);
 You cand find a basic example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Basic/Basic.ino).
 
 **2. Verbosity levels:**
-There are four verbosity levels. The order in terms of verbosity, from least to most is `A, AA, AAA, AAAA`. You can choose at wich verbosity level a message will be printed and also set a filtering threshold. Only the masseges less or equally verbose to the treshold level will be printed. 
+There are four verbosity levels. The order in terms of verbosity, from least to most is `v, vv, vvv, vvvv`. You can choose at wich verbosity level a message will be printed and also set a filtering threshold. Only the masseges less or equally verbose to the treshold level will be printed. 
 It maybe easier to see this in the example:
 ```Arduino
 void setup() {
