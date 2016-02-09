@@ -1,6 +1,6 @@
 # advancedSerial
 
-This library provides some additions to regular `Serial.print()`:
+This library provides some additions to vanilla `Serial.print()`:
 
 **1. Chainable `print()` and `println()` methods:**
 
@@ -21,28 +21,28 @@ You cand find a basic example [here](https://github.com/klenov/advancedSerial/bl
 
 **2. Verbosity levels:**
 There are four verbosity levels. The order in terms of verbosity, from least to most is `A, AA, AAA, AAAA`. You can choose at wich verbosity level a message will be printed and also set a filtering threshold. Only the masseges less or equally verbose to the treshold level will be printed. 
-Maybe is't easier to see by the example:
+It maybe easier to see this in the example:
 ```Arduino
 void setup() {
   Serial.begin(9600);
 
   aSerial.setPrinter(Serial);
-  aSerial.setFilter(Level::AA); // The filtering threshold is set to Level::AA
+  aSerial.setFilter(Level::vv); // The filtering threshold is set to Level::vv
 }
 
 void loop() {
   // This message will be printed
-  aSerial.level(Level::A).println("Level::A is less verbose than the filtering threshold");
+  aSerial.level(Level::v).println("Level::v is less verbose than the filtering threshold");
   // This message also will be printed
-  aSerial.level(Level::AA).println("Level::AA is equal to the filtering threshold"); 
+  aSerial.level(Level::vv).println("Level::vv is equal to the filtering threshold"); 
   
   // This message won't be printed
-  aSerial.level(Level::AAA).println("Level::AAA is more verbose than the filtering threshold");
+  aSerial.level(Level::vvv).println("Level:vvv is more verbose than the filtering threshold");
   // This message won't be printed
-  aSerial.level(Level::AAAA).println("Level::AAAA is more verbose than the filtering threshold");
+  aSerial.level(Level::vvvv).println("Level::vvvv is more verbose than the filtering threshold");
   
   // also short method names are available
-  aSerial.l(Level::AAAA).p("Oops! ").pln("This message won't be printed");
+  aSerial.l(Level::vvvv).p("Oops! ").pln("This message won't be printed");
 }
 ```
 You cand find a complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Advanced/Advanced.ino).
@@ -53,7 +53,7 @@ You should have Arduino IDE 1.5.8 or newer to use this library or you can [manua
 | Method               | Short alias | Description                                                   |
 |----------------------|-------------|---------------------------------------------------------------|
 | `setPrinter(Print)`  |             | `Print` could be a hardware or software serial                |
-| `setFilter(Level)`   |             | `Level` could be one of `Level::A`, `Level::AA`, ..., `Level::AAAA`|
+| `setFilter(Level)`   |             | `Level` could be one of `Level::v`, `Level::vv`, ..., `Level::vvvv`|
 | `off()`              |             | Disables the output                                           |
 | `on()`               |             | Enables the output                                            |
 | `level(Level)`       | `l(Level)`  | Sets the message verbosity level                              |
