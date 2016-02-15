@@ -3,7 +3,7 @@
    https://github.com/klenov/advancedSerial
 */
 
-#include <advancedSerial.cpp>
+#include <advancedSerial.h>
 
 int counter = 0;
 
