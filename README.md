@@ -75,6 +75,7 @@ At this time this library doesn't work on Arduino Due.
 * http://playground.arduino.cc/Code/SerialDebugger
 * https://github.com/felixstorm/AvrArdLogging
 * https://github.com/dhylands/Arduino-logging-library
+* https://github.com/AMPWorks/ArduinoLibs/tree/master/Debug
 
 
 
