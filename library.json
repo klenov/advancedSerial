@@ -1,0 +1,15 @@
+{
+    "name": "advancedSerial",
+    "keywords": "logging, serial, debugging, verbosity levels",
+    "description": "An Arduino library with additions to vanilla Serial.print(). Chainable methods and verbosity levels. Suitable for debug messages.",
+    "repository":
+    {
+        "type": "git",
+        "url": "https://github.com/klenov/advancedSerial"
+    },
+    "frameworks": "arduino",
+    "platforms": [
+        "atmelavr",
+        "teensy"
+    ]
+}
