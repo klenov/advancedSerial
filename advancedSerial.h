@@ -92,6 +92,14 @@ public:
       return *this;
     }
     inline advancedSerial& pln(long n, int base) { return println(n, base); }
+
+    advancedSerial& println(void) {
+      if ( should_be_printed() ) {
+        _printer->println();
+      }
+      return *this;
+    }
+    inline advancedSerial& pln(void) { return println(); }
 };
 
 advancedSerial aSerial = advancedSerial();

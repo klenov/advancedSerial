@@ -36,5 +36,8 @@ void loop() {
 
   aSerial.l(Level::v).p("Look! ").pln("This message will be printed");
 
+  // Two empty lines
+  aSerial.l(Level::v).println().pln();
+
   delay(3000);
 }
