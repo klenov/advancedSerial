@@ -5,8 +5,6 @@
 
 #include <advancedSerial.h>
 
-int counter = 0;
-
 void setup() {
   Serial.begin(9600);
 
@@ -38,6 +36,19 @@ void loop() {
 
   // Two empty lines
   aSerial.l(Level::v).println().pln();
+
+  // printf based output
+  int  foo =  1729;
+  long bar = 65536;
+  print_v("printf based output:\n");
+  print_v("foo as hex = 0x%X, bar as hex = 0x%lx \n", foo, bar);
+  print_vv("level vv\n");
+  print_vvv("level vvv\n");
+  print_vvvv("level vvvv\n");
+  
+  // very long string, first PRINT_BUFFER_SIZE characters will be printed
+  print_v("012345678901234567890123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
+  print_v("\n");
 
   delay(3000);
 }
