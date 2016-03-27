@@ -6,13 +6,6 @@
 #ifndef ADVANCED_SERIAL
 #define ADVANCED_SERIAL
 
-#define PRINT_BUFFER_SIZE 80
-
-#define print_v(fmt, ...)    (  aSerial.level(Level::v).vsnprintfPrint(fmt, ## __VA_ARGS__) )
-#define print_vv(fmt, ...)   (  aSerial.level(Level::vv).vsnprintfPrint(fmt, ## __VA_ARGS__) )
-#define print_vvv(fmt, ...)  (  aSerial.level(Level::vvv).vsnprintfPrint(fmt, ## __VA_ARGS__) )
-#define print_vvvv(fmt, ...) (  aSerial.level(Level::vvvv).vsnprintfPrint(fmt, ## __VA_ARGS__) )
-
 #include <stdarg.h>
 #include "Arduino.h"
 
@@ -29,8 +22,6 @@ private:
     const Level default_message_level = Level::v;
 
     Print*  _printer;
-
-    static const int printf_buffer_size = PRINT_BUFFER_SIZE;
 
     inline bool should_be_printed(void) { return _output_enabled && ( _message_level <= _filter_level ); }
 public:
@@ -109,19 +100,7 @@ public:
       return *this;
     }
     inline advancedSerial& pln(void) { return println(); }
-
-    void vsnprintfPrint(const char *format, ...) {
-      char printf_buffer[printf_buffer_size];
-
-      va_list args;
-      va_start(args, format);
-      // vsnprintf reference http://www.nongnu.org/avr-libc/user-manual/group__avr__stdio.html#gaa3b98c0d17b35642c0f3e4649092b9f1
-      vsnprintf(printf_buffer, printf_buffer_size, format, args);
-      print(printf_buffer);
-    }
 };
-
-advancedSerial aSerial = advancedSerial();
 
 extern advancedSerial aSerial;
 typedef advancedSerial::Level Level;
