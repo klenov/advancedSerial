@@ -45,7 +45,14 @@ void loop() {
   aSerial.l(Level::vvvv).p("Oops! ").pln("This message won't be printed");
 }
 ```
-You cand find a complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Advanced/Advanced.ino).
+
+**Consider storing long strings on flash memory rather than RAM using F() macro**
+```Arduino
+aSerial.println(F("This string will be stored in flash memory"));
+
+```
+
+You can find a complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Advanced/Advanced.ino).
 
 You should have Arduino IDE 1.5.8 or newer to use this library or you can [manually enable C++11 in the configuration files](https://arduino.land/FAQ/content/2/49/en/can-c11-be-used-with-arduino.html).
 

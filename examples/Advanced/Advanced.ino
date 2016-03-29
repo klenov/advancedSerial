@@ -33,6 +33,9 @@ void loop() {
   aSerial.l(Level::vvvv).pln("This message won't be printed");
 
   aSerial.l(Level::v).p("Look! ").pln("This message will be printed");
+  
+  // Consider storing long strings on flash memory rather than RAM using F() macro
+  aSerial.l(Level::v).pln(F("This string will be stored in flash memory"));
 
   // Two empty lines
   aSerial.l(Level::v).println().pln();
