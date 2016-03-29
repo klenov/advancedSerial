@@ -68,8 +68,7 @@ You should have Arduino IDE 1.5.8 or newer to use this library or you can [manua
 * Arduino Mega 2560
 * Teensy 3.1
 * NodeMCU 1.0
-
-At this time this library doesn't work on Arduino Due.
+* Arduino Due
 
 ## Similar libraries
 * http://playground.arduino.cc/Code/SerialDebugger
