@@ -20,7 +20,6 @@ script:
       platformio ci --lib="."
       --board=nanoatmega328
       --board=sparkfun_promicro16
-      --board=due 
       --board=teensy31
       --board=nodemcu
       --board=uno
