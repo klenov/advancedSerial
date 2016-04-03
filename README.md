@@ -1,3 +1,5 @@
+
+[![Build Status](https://travis-ci.org/klenov/advancedSerial.svg?branch=master)](https://travis-ci.org/klenov/advancedSerial)
 # advancedSerial
 
 This library provides some additions to vanilla `Serial.print()`:
