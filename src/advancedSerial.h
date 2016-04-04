@@ -23,7 +23,7 @@ private:
 
     Print*  _printer;
 
-    inline bool should_be_printed(void) { return _output_enabled && ( _message_level <= _filter_level ); }
+    inline bool shouldBePrinted(void) { return _output_enabled && ( _message_level <= _filter_level ); }
 public:
     /*! * default Constructor */
     advancedSerial()
@@ -51,7 +51,7 @@ public:
 
     template <typename Type>
     advancedSerial& print(Type tX) {
-      if ( should_be_printed() ) {
+      if ( shouldBePrinted() ) {
         _printer->print(tX);
       }
       return *this;
@@ -64,7 +64,7 @@ public:
 
     template <typename Type>
     advancedSerial& println(Type tX) {
-      if( should_be_printed() ) {
+      if( shouldBePrinted() ) {
         print(tX);
         _printer->println();
       }
@@ -77,7 +77,7 @@ public:
     }
 
     advancedSerial& print(long n, int base) {
-      if ( should_be_printed() ) {
+      if ( shouldBePrinted() ) {
         _printer->print(n, base);
       }
       return *this;
@@ -85,7 +85,7 @@ public:
     inline advancedSerial& p(long n, int base) { return print(n, base); }
 
     advancedSerial& println(long n, int base) {
-      if ( should_be_printed() ) {
+      if ( shouldBePrinted() ) {
         print(n, base);
         _printer->println();
       }
@@ -94,7 +94,7 @@ public:
     inline advancedSerial& pln(long n, int base) { return println(n, base); }
 
     advancedSerial& println(void) {
-      if ( should_be_printed() ) {
+      if ( shouldBePrinted() ) {
         _printer->println();
       }
       return *this;
