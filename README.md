@@ -7,11 +7,6 @@ This library provides some additions to vanilla `Serial.print()`:
 **1. Chainable `print()` and `println()` methods:**
 
 ```Arduino
-// Instead of
-Serial.print("x = ");
-Serial.print(x);
-Serial.print("y = ");
-Serial.println(y);
 
 // you can chain print() and println() methods
 aSerial.print("x = ").print(x).print("y = ").println(y);
@@ -19,11 +14,11 @@ aSerial.print("x = ").print(x).print("y = ").println(y);
 // short method names are also available
 aSerial.p("x = ").p(x).p("y = ").pln(y);
 ```
-You cand find a basic example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Basic/Basic.ino).
+You cand find a complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Basic/Basic.ino).
 
 **2. Verbosity levels:**
 There are four verbosity levels. The order in terms of verbosity, from least to most is `v, vv, vvv, vvvv`. You can choose at wich verbosity level a message will be printed and also set a filtering threshold. Only the masseges less or equally verbose to the treshold level will be printed. 
-It maybe easier to see this in the example:
+It may be easier to see this in the example:
 ```Arduino
 void setup() {
   Serial.begin(9600);
