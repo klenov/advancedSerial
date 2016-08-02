@@ -23,5 +23,8 @@ script:
       --board=teensy31
       --board=nodemcu
       --board=uno
+      --board=zero
+      --board=mkr1000USB
+      --board=genuino101
 
 
