@@ -10,6 +10,9 @@
   "frameworks": "arduino",
   "platforms": [
     "atmelavr",
-    "teensy"
+    "intel_arc32",
+    "atmelsam",
+    "teensy",
+    "espressif"
   ]
 }
