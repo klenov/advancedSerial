@@ -16,15 +16,14 @@ void setup() {
 }
 
 void loop() {
-  /* Printing "hello, world". */
-  aSerial.print("hello, ");
-  aSerial.println("world");
 
   // you can chain print() and println() methods
   aSerial.print("counter = ").println(counter);
 
   // also short method names are available
   aSerial.p("counter = ").pln(counter);
+
+  aSerial.pln().pln();
 
   counter++;
   delay(3000);

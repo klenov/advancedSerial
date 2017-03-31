@@ -49,6 +49,22 @@ public:
     }
     inline advancedSerial& l(Level m_level) { return level(m_level); }
 
+    advancedSerial& v() {
+      return level(Level::v);
+    }
+
+    advancedSerial& vv() {
+      return level(Level::vv);
+    }
+
+    advancedSerial& vvv() {
+      return level(Level::vvv);
+    }
+
+    advancedSerial& vvvv() {
+      return level(Level::vvvv);
+    }
+
     template <typename Type>
     advancedSerial& print(Type tX) {
       if ( shouldBePrinted() ) {
