@@ -29,17 +29,14 @@ void setup() {
 
 void loop() {
   // This message will be printed
-  aSerial.level(Level::v).println("Level::v is less verbose than the filtering threshold");
+  aSerial.v().println("Level v is less verbose than the filtering threshold");
   // This message also will be printed
-  aSerial.level(Level::vv).println("Level::vv is equal to the filtering threshold"); 
+  aSerial.vv().println("Level vv is equal to the filtering threshold"); 
   
   // This message won't be printed
-  aSerial.level(Level::vvv).println("Level:vvv is more verbose than the filtering threshold");
+  aSerial.vvv().println("Level vvv is more verbose than the filtering threshold");
   // This message won't be printed
-  aSerial.level(Level::vvvv).println("Level::vvvv is more verbose than the filtering threshold");
-  
-  // also short method names are available
-  aSerial.l(Level::vvvv).p("Oops! ").pln("This message won't be printed");
+  aSerial.vvvv().println("Level vvvv is more verbose than the filtering threshold");
 }
 ```
 
@@ -57,10 +54,10 @@ You should have Arduino IDE 1.5.8 or newer to use this library or you can [manua
 | Method               | Short alias | Description                                                   |
 |----------------------|-------------|---------------------------------------------------------------|
 | `setPrinter(Print)`  |             | `Print` could be a hardware or software serial                |
-| `setFilter(Level)`   |             | `Level` could be one of `Level::v`, `Level::vv`, ..., `Level::vvvv`|
+| `setFilter(Level)`   |             | `Level` could be one of `Level::v`, `Level::vv`, …, `Level::vvvv`|
 | `off()`              |             | Disables the output                                           |
 | `on()`               |             | Enables the output                                            |
-| `level(Level)`       | `l(Level)`  | Sets the message verbosity level                              |
+| `level(Level)`       | `v(), vv(), vvv(), vvvv()`  | Sets the message verbosity level                              |
 | `print(x)`            |    `p(x)`    | The same functionality as `Serial.print()`                    |
 | `println(x)`          |    `pln(x)`  | The same functionality as `Serial.println()`                  |
 
