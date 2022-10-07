@@ -14,10 +14,11 @@ aSerial.print("x = ").print(x).print("y = ").println(y);
 // short method names are also available
 aSerial.p("x = ").p(x).p("y = ").pln(y);
 ```
-You cand find a complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Basic/Basic.ino).
+You can find a complete example [here](https://github.com/klenov/advancedSerial/blob/master/examples/Basic/Basic.ino).
 
-**2. Verbosity levels:**
-There are four verbosity levels. The order in terms of verbosity, from least to most is `v, vv, vvv, vvvv`. You can choose at wich verbosity level a message will be printed and also set a filtering threshold. Only the masseges less or equally verbose to the treshold level will be printed. 
+**2. Optional verbosity levels:**
+Verbosity levels provide a convinient way to control how many messages will be printed. It is mostly suitable for debugging.
+There are four verbosity levels: `v, vv, vvv, vvvv`. You can choose at wich verbosity level a message will be printed and also set a filtering threshold. Only the masseges less or equally verbose to the treshold level will be printed. 
 It may be easier to see this in the example:
 ```Arduino
 void setup() {
