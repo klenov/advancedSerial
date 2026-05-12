@@ -10,20 +10,20 @@ void setup() {
 
   aSerial.setPrinter(Serial);
   aSerial.setFilter(Level::vv);
-  /* Uncomment the following line to disable the output. By defalut the ouput is on. */
+  /* Uncomment the following line to disable the output. By default the output is on. */
   // aSerial.off();
 }
 
 void loop() {
   // This message will be printed
-  aSerial.v().println("Level v() is less verbose than the filtering threshold");
+  aSerial.v().println("Level v is less verbose than the filtering threshold");
   // This message also will be printed
-  aSerial.vv().println("Level vv() is equal to the filtering threshold");
+  aSerial.vv().println("Level vv is equal to the filtering threshold");
 
   // This message won't be printed
-  aSerial.vvv().println("Level::vvv is more verbose than the filtering threshold");
+  aSerial.vvv().println("Level vvv is more verbose than the filtering threshold");
   // This message won't be printed
-  aSerial.vvvv().println("Level::vvvv is more verbose than the filtering threshold");
+  aSerial.vvvv().println("Level vvvv is more verbose than the filtering threshold");
   
   // Consider storing long strings on flash memory rather than RAM using F() macro
   aSerial.v().pln(F("This string will be stored in flash memory"));

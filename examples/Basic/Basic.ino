@@ -11,7 +11,7 @@ void setup() {
   Serial.begin(9600);
 
   aSerial.setPrinter(Serial);
-  /* Uncomment the following line to completely disable the output, if you need to. By defalut the ouput is on. */
+  /* Uncomment the following line to completely disable the output, if you need to. By default the output is on. */
   // aSerial.off();
 }
 
